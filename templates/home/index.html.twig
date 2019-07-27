@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue
+{% endblock %}
+
+{% block body %}
+    <div class="box">
+
+        <div class="container">
+            <h1 class="h1 text-center">GESTCOM</h1>
+
+            <div class="row">
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                    <div class="box-part text-center">
+                        <i aria-hidden="true" class="fa fa-user fa-4x"></i>
+
+                        <div class="title mt-4">
+                            <h2>Client</h2>
+                        </div>
+                        <div class="text">
+                            <span class="span">Ajout, Modification, Suppression, Edition des clients</span>
+                        </div>
+                        <a href="{{ path('client_index') }}" class="btn btn-primary mt-3 mb-3">Gestion des clients</a>
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                    <div class="box-part text-center">
+                        <i aria-hidden="true" class="fa fa-product-hunt fa-4x"></i>
+
+
+                        <div class="title mt-4">
+                            <h2>Produit</h2>
+                        </div>
+                        <div class="text">
+                            <span class="span">Ajout, Modification, Suppression, Edition des produits</span>
+                        </div>
+                        <a href="{{ path('produit_index') }}" class="btn btn-primary mt-3 mb-3">Gestion des produits</a>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                    <div class="box-part text-center">
+                        <i aria-hidden="true" class="fa fa-cart-arrow-down fa-4x"></i>
+
+
+                        <div class="title mt-4">
+                            <h2>Famille des produits</h2>
+                        </div>
+                        <div class="text">
+                            <span class="span">Ajout, Modification, Suppression, Edition de la famille des produits</span>
+                        </div>
+                        <a href="{{ path('famille_index') }}" class="btn btn-primary mt-3 mb-3">Famille des produits</a>
+
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+
+                    <div class="box-part text-center">
+                        <i aria-hidden="true" class="fa fa-shopping-basket fa-4x"></i>
+
+                        <div class="title mt-4">
+                            <h2>Commande</h2>
+                        </div>
+                        <div class="text">
+                            <span class="span">Gérer les commandes</span>
+                        </div>
+                        <a class="btn btn-primary mt-3 mb-3" href="#">Gérer les commandes</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

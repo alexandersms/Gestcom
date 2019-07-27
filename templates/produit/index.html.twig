@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des produits
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="h1 mt-3 mb-3">Liste des produits</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Libelle</th>
+                    <th>Prix ​​d'achat</th>
+                    <th>Prix ​​de vente</th>
+                    <th>Tva</th>
+                    <th>Stock</th>
+                    <th>Stock initial</th>
+                    <th>Stock Alert</th>
+                    <th>Famille</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for produit in produits %}
+                    <tr>
+                        <td>{{ produit.id }}</td>
+                        <td>{{ produit.libelle }}</td>
+                        <td>{{ produit.buyingPrice }}</td>
+                        <td>{{ produit.sellingPrice }}</td>
+                        <td>{{ produit.tva }}</td>
+                        <td>{{ produit.stock }}</td>
+                        <td>{{ produit.stockInit }}</td>
+                        <td>{{ produit.stockAlert }}</td>
+                        <td>{{ produit.famille.libelle }}</td>
+
+                        <td>
+                            <a href="{{ path('produit_show', {'id': produit.id}) }}" class="btn btn-info">Voir</a>
+                            <a href="{{ path('produit_edit', {'id': produit.id}) }}" class="btn btn-warning">Editer</a>
+
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="9">Aucun enregistrement trouvé</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('produit_new') }}" class="btn btn-primary">Créer un nouveau produit</a>
+        <a href="{{ path('home') }}" class="btn btn-secondary">Retour au menu principal</a>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Famille index
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="h1 mb-3 mt-3">Liste de famille des produits</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Libelle</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for famille in familles %}
+                    <tr>
+                        <td>{{ famille.libelle }}</td>
+                        <td>
+                            <a href="{{ path('famille_show', {'id': famille.id}) }}" class="btn btn-info">Voir</a>
+                            <a href="{{ path('famille_edit', {'id': famille.id}) }}" class="btn btn-warning">Editer</a>
+
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3">Aucun enregistrement trouvé</td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('famille_new') }}" class="btn btn-primary">Créer une nouvelle famille de produit</a>
+        <a href="{{ path('home') }}" class="btn btn-secondary">Retour au menu principal</a>
+
+
+    </div>
+
+{% endblock %}

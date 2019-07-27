@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des clients
+{% endblock %}
+
+{% block body %}
+
+    <div class="container">
+        <h1 class="h1 mt-3 mb-3">Liste des clients</h1>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Désignation</th>
+                    {#<th>SalesManager</th>#}
+                    {#<th>FinancialOfficer</th>#}
+                    <th>Adresse de livraison</th>
+                    <th>Adresse de facturation</th>
+                    {#<th>Phone</th>#}
+                    <th>Portable</th>
+                    {#<th>Fax</th>#}
+                    <th>Email</th>
+                    <th>Solde initial</th>
+                    <th>Solde final</th>
+                    <th>actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for client in clients %}
+                    <tr>
+                        <td>{{ client.designation }}</td>
+                        {#<td>{{ client.salesManager }}</td>#}
+                        {#<td>{{ client.financialOfficer }}</td>#}
+                        <td>{{ client.deliveryAddress }}</td>
+                        <td>{{ client.billingAddress }}</td>
+                        {#<td>{{ client.phone }}</td>#}
+                        <td>{{ client.portable }}</td>
+                        {#<td>{{ client.fax }}</td>#}
+                        <td>{{ client.email }}</td>
+                        <td>{{ client.soldeInit }}</td>
+                        <td>{{ client.soldeFinal }}</td>
+                        <td>
+                            <a href="{{ path('client_show', {'id': client.id}) }}" class="btn btn-info">Voir</a>
+                        </td>
+                        <td>
+                            <a href="{{ path('client_edit', {'id': client.id}) }}" class="btn btn-warning">Editer</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="13">Aucun enregistrement trouvé</td>
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <a href="{{ path('client_new') }}" class="btn btn-primary">Créer un nouveau client</a>
+        <a href="{{ path('home') }}" class="btn btn-secondary">Retour au menu principal</a>
+    </div>
+
+{% endblock %}

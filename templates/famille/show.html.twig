@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Famille
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-3">
+        <h1>Famille</h1>
+
+        <table class="table">
+            <tbody>
+                <tr>
+                    <th>Libelle</th>
+                    <td>{{ famille.libelle }}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a href="{{ path('famille_index') }}" class="btn btn-secondary">retour à la liste</a>
+        <a href="{{ path('famille_edit', {'id': famille.id}) }}" class="btn btn-warning">Editer</a>
+
+        {{ include('famille/_delete_form.html.twig') }}
+    </div>
+
+{% endblock %}

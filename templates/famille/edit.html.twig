@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Famille
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1 class="h1 mt-3 mb-3">Editer une famille de produit</h1>
+
+        {{ include('famille/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+        <a href="{{ path('famille_index') }}" class="btn btn-secondary mt-2">retour à la liste</a>
+
+        {{ include('famille/_delete_form.html.twig') }}
+    </div>
+
+{% endblock %}

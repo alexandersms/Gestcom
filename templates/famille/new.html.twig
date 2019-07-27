@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Famille
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <h1>Créer une nouvelle famille de produit</h1>
+
+        {{ include('famille/_form.html.twig') }}
+
+        <a href="{{ path('famille_index') }}" class="btn btn-secondary mt-2">retour à la liste</a>
+    </div>
+
+{% endblock %}

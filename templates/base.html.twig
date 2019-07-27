@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GestCom -
+            {% block title %}Welcome!
+            {% endblock %}
+        </title>
+        <link href="/css/style.css" rel="stylesheet">
+        <link href="/css/bootstrap.min.css" rel="stylesheet"> {% block stylesheets %}{% endblock %}
+        <link href="https://fonts.googleapis.com/css?family=Lato|Roboto:300,400,500,700,900&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+
+        {#% include "inc/navbar.html.twig" %#}
+        {% block body %}{% endblock %}
+
+
+        <script src="/js/jquery.min.js"></script>
+        <script src="/js/popper.min.js"></script>
+        <script src="/js/bootstrap.min.js"></script>
+
+
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
